@@ -2,5 +2,5 @@
 // This can be used for inserting local test data when mongo starts up
 
 // Example:
-// db = db.getSiblingDB('cdp-node-backend-template')
+// db = db.getSiblingDB('facade-lis-api-backend')
 // db.foo.insertOne({bar: "baz"})

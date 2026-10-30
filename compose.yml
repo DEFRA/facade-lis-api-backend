@@ -39,7 +39,7 @@ services:
 
   ################################################################################
 
-  cdp-node-backend-template:
+  facade-lis-api-backend:
     build:
       context: .
       target: development
