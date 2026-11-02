@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "dgSpecHash": "4TAT9Ofkufk=",
+  "success": true,
+  "projectFilePath": "/Users/maxlilleyman/Documents/DEFRA/Livestock/facade-lis-api-backend/LisFacadeApiBackend/LisFacadeApiBackend.csproj",
+  "expectedPackageFiles": [
+    "/Users/maxlilleyman/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/elastic.commonschema/9.0.0/elastic.commonschema.9.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/elastic.commonschema.serilog/9.0.0/elastic.commonschema.serilog.9.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/elastic.serilog.enrichers.web/9.0.0/elastic.serilog.enrichers.web.9.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/microsoft.aspnetcore.headerpropagation/10.0.8/microsoft.aspnetcore.headerpropagation.10.0.8.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/microsoft.aspnetcore.openapi/10.0.8/microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/microsoft.extensions.dependencymodel/10.0.0/microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/microsoft.openapi/2.12.2/microsoft.openapi.2.12.2.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/mongodb.bson/3.8.1/mongodb.bson.3.8.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/mongodb.driver/3.8.1/mongodb.driver.3.8.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/mongodb.driver.authentication.aws/3.8.1/mongodb.driver.authentication.aws.3.8.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog/4.3.0/serilog.4.3.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.aspnetcore/10.0.0/serilog.aspnetcore.10.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.enrichers.clientinfo/2.9.0/serilog.enrichers.clientinfo.2.9.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.enrichers.environment/3.0.1/serilog.enrichers.environment.3.0.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.enrichers.thread/4.0.0/serilog.enrichers.thread.4.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.extensions.hosting/10.0.0/serilog.extensions.hosting.10.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.extensions.logging/10.0.0/serilog.extensions.logging.10.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.formatting.compact/3.0.0/serilog.formatting.compact.3.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.settings.configuration/10.0.0/serilog.settings.configuration.10.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.sinks.console/6.1.1/serilog.sinks.console.6.1.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.sinks.debug/3.0.0/serilog.sinks.debug.3.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/serilog.sinks.file/7.0.0/serilog.sinks.file.7.0.0.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/snappier/1.3.1/snappier.1.3.1.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.2.3/swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512",
+    "/Users/maxlilleyman/.nuget/packages/zstdsharp.port/0.7.3/zstdsharp.port.0.7.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SharpCompress' 0.30.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6c8g-7p36-r338",
+      "projectPath": "/Users/maxlilleyman/Documents/DEFRA/Livestock/facade-lis-api-backend/LisFacadeApiBackend/LisFacadeApiBackend.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/maxlilleyman/Documents/DEFRA/Livestock/facade-lis-api-backend/LisFacadeApiBackend/LisFacadeApiBackend.csproj",
+      "libraryId": "SharpCompress",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

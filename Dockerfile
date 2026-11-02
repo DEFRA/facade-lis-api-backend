@@ -1,39 +1,21 @@
-ARG PARENT_VERSION=3.2.4-node24.22.1
-ARG PORT=3000
-ARG PORT_DEBUG=9229
+﻿# Build stage image
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+COPY . .
+WORKDIR "/src"
+RUN dotnet test LisFacadeApiBackend.Test
+RUN dotnet publish LisFacadeApiBackend -c Release -o /app/publish /p:UseAppHost=false
 
-FROM defradigital/node-development:${PARENT_VERSION} AS development
-ARG PARENT_VERSION
-LABEL uk.gov.defra.ffc.parent-image=defradigital/node-development:${PARENT_VERSION}
+# Final production image
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 
+WORKDIR /app
 
-ARG PORT
-ARG PORT_DEBUG
-ENV PORT=${PORT}
-EXPOSE ${PORT} ${PORT_DEBUG}
+# Add curl to template, CDP PLATFORM HEALTHCHECK REQUIREMENT
+RUN apt update && \
+    apt install curl -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-COPY --chown=node:node package*.json ./
-RUN npm install
-COPY --chown=node:node ./src ./src
-
-CMD [ "npm", "run", "docker:dev" ]
-
-FROM defradigital/node:${PARENT_VERSION} AS production
-ARG PARENT_VERSION
-LABEL uk.gov.defra.ffc.parent-image=defradigital/node:${PARENT_VERSION}
-
-# Add curl to template.
-# CDP PLATFORM HEALTHCHECK REQUIREMENT
-USER root
-RUN apk add --no-cache curl
-USER node
-
-COPY --from=development /home/node/package*.json ./
-COPY --from=development /home/node/src ./src/
-
-RUN npm ci --omit=dev
-
-ARG PORT
-ENV PORT=${PORT}
-EXPOSE ${PORT}
-
-CMD [ "node", "src" ]
+COPY --from=build /app/publish .
+EXPOSE 8085
+ENTRYPOINT ["dotnet", "LisFacadeApiBackend.dll"]
