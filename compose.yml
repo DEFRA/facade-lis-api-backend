@@ -28,23 +28,36 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - ./compose/mongo:/docker-entrypoint-initdb.d:ro
       - mongodb-data:/data
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.hello().ok"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
 
   ################################################################################
 
-  facade-lis-api-backend:
-    build:
-      context: .
-      target: development
+  # your-frontend:
+  #   image: defradigital/your-frontend:${YOUR_FRONTEND_VERSION:-latest}
+  #   ports:
+  #     - '3000:3000'
+  #   links:
+  #     - 'floci:floci'
+  #     - 'redis:redis'
+  #   depends_on:
+  #     floci:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_started
+  #   env_file:
+  #     - 'compose/aws.env'
+  #   environment:
+  #     PORT: 3000
+  #     NODE_ENV: development
+  #     REDIS_HOST: redis
+  #     USE_SINGLE_INSTANCE_CACHE: true
+  #   networks:
+  #     - cdp-tenant
+
+  your-backend:
+    build: ./
     ports:
-      - '3001:3001'
+      - '8085:8085'
     links:
       - 'floci:floci'
       - 'mongodb:mongodb'
@@ -56,14 +69,10 @@ services:
     env_file:
       - 'compose/aws.env'
     environment:
-      PORT: 3001
-      NODE_ENV: development
-      MONGO_URI: mongodb://mongodb:27017/
+      ASPNETCORE_URLS: http://+:8085
+      Mongo__DatabaseUri: mongodb://mongodb:27017/
     networks:
       - cdp-tenant
-    volumes:
-      - ./src:/home/node/src
-      - ./package.json:/home/node/package.json
 
 ################################################################################
 
@@ -73,4 +82,3 @@ volumes:
 networks:
   cdp-tenant:
     driver: bridge
-    name: cdp-tenant
